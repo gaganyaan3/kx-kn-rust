@@ -80,6 +80,7 @@ jobs:
       #     RUSTTARGET: x86_64-apple-darwin
       #     ARCHIVE_TYPES: tar.gz
       #     ARCHIVE_NAME: kn-${{ env.RELEASE_VERSION }}-x86_64-apple-darwin
+      
       - name: Release
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
