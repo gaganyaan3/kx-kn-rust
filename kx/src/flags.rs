@@ -3,14 +3,10 @@ use std::process;
 
 pub fn flags() -> String {
     let args: Vec<String> = env::args().collect();
-    let mut kx = "";
-
     if args.len() == 1 {
-        kx = "";
-        return kx.to_string();
-    } else {
-        kx = args[1].as_str();
+        return String::new();
     }
+    let kx = args[1].as_str();
     
     // help
     if kx == "--help" || kx == "-h" {
@@ -25,7 +21,7 @@ pub fn flags() -> String {
     // version
     if kx == "--version" || kx == "-V" {
         const VERSION: &str = env!("CARGO_PKG_VERSION");
-        println!("{}",VERSION);
+        println!("{}", VERSION);
         process::exit(0);
     }
 
@@ -33,5 +29,5 @@ pub fn flags() -> String {
         println!("invalid option try with --help");
         process::exit(1);
     }
-    return kx.to_string();
+    kx.to_string()
 }
