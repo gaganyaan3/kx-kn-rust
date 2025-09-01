@@ -8,7 +8,7 @@
 ### Install kx and kn on linux:
 
 ```bash
-curl -s https://raw.githubusercontent.com/koolwithk/kx-kn-rust/main/install.sh | bash
+curl -s https://raw.githubusercontent.com/gaganyaan3/kx-kn-rust/main/install.sh | bash
 ```
 
 ### `kxkn` cli usage
@@ -23,7 +23,7 @@ kx <context>       #switch to other context
 ### Build binary
 
 ```
-git clone https://github.com/koolwithk/kx-kn-rust.git
+git clone https://github.com/gaganyaan3/kx-kn-rust.git
 cd kx
 cargo build --release
 

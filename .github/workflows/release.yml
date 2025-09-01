@@ -17,7 +17,7 @@ jobs:
         id: kx-compile-linux
         uses: rust-build/rust-build.action@v1.3.2
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
           SRC_DIR: kx
         with:
           RUSTTARGET: x86_64-unknown-linux-musl
@@ -28,7 +28,7 @@ jobs:
       #   id: kn-compile-linux
       #   uses: rust-build/rust-build.action@v1.3.2
       #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     GITHUB_TOKEN: ${{ secrets.TOKEN }}
       #     SRC_DIR: kn
       #   with:
       #     RUSTTARGET: x86_64-unknown-linux-musl
@@ -40,7 +40,7 @@ jobs:
         id: kx-compile-windows
         uses: rust-build/rust-build.action@v1.3.2
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
           SRC_DIR: kx
         with:
           RUSTTARGET: x86_64-pc-windows-gnu
@@ -51,7 +51,7 @@ jobs:
       #   id: kn-compile-windows
       #   uses: rust-build/rust-build.action@v1.3.2
       #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     GITHUB_TOKEN: ${{ secrets.TOKEN }}
       #     SRC_DIR: kn
       #   with:
       #     RUSTTARGET: x86_64-pc-windows-gnu
@@ -63,7 +63,7 @@ jobs:
         id: kx-compile-darwin
         uses: rust-build/rust-build.action@v1.3.2
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
           SRC_DIR: kx
         with:
           RUSTTARGET: x86_64-apple-darwin
@@ -74,16 +74,17 @@ jobs:
       #   id: kn-compile-darwin
       #   uses: rust-build/rust-build.action@v1.3.2
       #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     GITHUB_TOKEN: ${{ secrets.TOKEN }}
       #     SRC_DIR: kn
       #   with:
       #     RUSTTARGET: x86_64-apple-darwin
       #     ARCHIVE_TYPES: tar.gz
       #     ARCHIVE_NAME: kn-${{ env.RELEASE_VERSION }}-x86_64-apple-darwin
+      
       - name: Release
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          repo_token: "${{ secrets.TOKEN }}"
           automatic_release_tag: ${{ env.RELEASE_VERSION }}
           prerelease: false
           title: "${{ env.RELEASE_VERSION }}"
